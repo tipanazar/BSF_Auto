@@ -61,10 +61,10 @@ export const SecondPart = () => {
           className={s.swiper}
           spaceBetween={20}
           centeredSlides={false}
-          // autoplay={{
-          //   delay: 250,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             700: {
               slidesPerView: 2,
@@ -74,7 +74,6 @@ export const SecondPart = () => {
             clickable: true,
           }}
           modules={[Autoplay, Pagination]}
-          // slideClass={s.swiperSlide}
         >
           <SwiperSlide>
             <CardElement

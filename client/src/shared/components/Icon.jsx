@@ -7,12 +7,14 @@ export const Icon = ({ className, iconId, width, height, fill, style }) => {
       width={width || "100%"}
       height={height || "100%"}
       fill={fill}
-      style={style}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        ...style,
+      }}
     >
-      <use href={`${sprite}#${iconId}`}
-    //    width="100%" height="100%"
-    //    width="80px" height="80px"
-       />
+      <use href={`${sprite}#${iconId}`} />
     </svg>
   );
 };

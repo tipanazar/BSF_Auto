@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 
-import logo from "../../images/header_logo.png";
-
 import s from "./header.module.scss";
+import { Icon } from "../../shared/components/Icon";
 
 export const Header = () => {
   return (
     <header className={s.header}>
       <Link className={s.headerLogoLink} href="/">
-        <img className={s.headerLogo} src={logo} alt="logo" />
+        <Icon className={s.headerLogoLinkIcon} iconId="headerLogo"/>
       </Link>
     </header>
   );
