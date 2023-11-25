@@ -1,0 +1,62 @@
+@import "../../sass/main.scss";
+
+.wrapper {
+  background-color: var(--background_gray);
+  padding: 20px 25px;
+
+  .firstTitle {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .cardsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    grid-gap: 20px;
+    @include mq(tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+    // .cardsListItem {
+    //   // width: fit-content;
+    // }
+  }
+  .secondTitle {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+}
+
+.swiperWrapper {
+  position: relative;
+
+  .swiper {
+    position: static;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    max-width: 440px;
+    @include mq(tablet) {
+      max-width: 900px;
+    }
+    & > div + div {
+      position: absolute;
+      bottom: -25px !important;
+    }
+    & > div > div  {
+      height: initial;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.swiperSlide {
+  // display: none;
+  height: 100%;
+}
