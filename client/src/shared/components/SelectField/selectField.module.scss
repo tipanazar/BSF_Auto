@@ -1,0 +1,61 @@
+$transitions: all 0.2s linear;
+
+.inputWrapper {
+  position: relative;
+  &:has(input:focus-visible) {
+    & > .icon {
+      transform: rotateX(-180deg);
+    }
+    & > .list {
+      display: block;
+      z-index: 99;
+      max-height: 250px;
+    }
+  }
+  .icon {
+    position: absolute;
+    right: 7px;
+    width: 24px;
+    fill: rgb(74, 74, 74);
+    transition: $transitions;
+  }
+  .list {
+    position: absolute;
+    z-index: -1;
+    background-color: white;
+    width: 100%;
+    top: 110%;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    max-height: 0;
+    overflow: auto;
+    box-shadow: inset 0px -3px 20px 0px rgba(0, 0, 0, 0.2);
+    transition: $transitions;
+
+    .listItem {
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      padding: 10px;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        background-color: #e6e6e6;
+      }
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

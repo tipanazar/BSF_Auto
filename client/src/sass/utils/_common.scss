@@ -1,67 +1,77 @@
-  html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  div#root {
-    // display: flex;
-    // flex-direction: column;
-    // min-height: inherit;
-    // background: var(--mainBackgroundGradientMobile);
-    // @include mq(tablet) {
-    //   background: var(--mainBackgroundGradientTablet);
-    // }
-    // @include mq(desktop) {
-    //   background: var(--mainBackgroundGradientDesktop);
-    // }
-  }
-  
-  img {
-    display: block;
-    height: auto;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  ol,
-  ul {
-    list-style: none;
-  }
-  
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  }
-  
-  button {
-    cursor: pointer;
-  }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+div#root {
+  // display: flex;
+  // flex-direction: column;
+  // min-height: inherit;
+  // background: var(--mainBackgroundGradientMobile);
+  // @include mq(tablet) {
+  //   background: var(--mainBackgroundGradientTablet);
+  // }
+  // @include mq(desktop) {
+  //   background: var(--mainBackgroundGradientDesktop);
+  // }
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
