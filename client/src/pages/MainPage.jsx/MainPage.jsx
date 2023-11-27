@@ -1,7 +1,8 @@
 import { FirstPart } from "../../Modules/FirstPart/FirstPart";
-import { FourthPart } from "../../Modules/FourthPart/FourthPart";
 import { SecondPart } from "../../Modules/SecondPart/SecondPart";
 import { ThirdPart } from "../../Modules/ThirdPart/ThirdPart";
+import { FourthPart } from "../../Modules/FourthPart/FourthPart";
+import { FifthPart } from "../../Modules/FifthPart/FifthPart";
 
 export const MainPage = () => {
   return (
@@ -10,6 +11,7 @@ export const MainPage = () => {
       <SecondPart />
       <ThirdPart />
       <FourthPart />
+      <FifthPart />
     </>
   );
 };
