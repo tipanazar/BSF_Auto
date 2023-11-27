@@ -24,7 +24,15 @@ export const DropdownTextList = ({ data }) => {
             : { borderRadius: "10px" }
         }
       >
-        <Icon className={s.icon} iconId="dropdownIndicator" />
+        <Icon
+          className={s.icon}
+          iconId="dropdownIndicator"
+          style={
+            isOpened.find((item) => item === idx + 1)
+              ? { transform: "rotateX(180deg)" }
+              : {}
+          }
+        />
         <p className={s.title}>{item.title}</p>
       </div>
       <p
