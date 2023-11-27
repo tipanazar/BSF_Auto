@@ -1,0 +1,33 @@
+@import '../../sass/main.scss';
+
+.wrapper {
+  position: relative;
+  padding: 15px 20px 50px 20px;
+  background: var(--background_gray);
+
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .swiper {
+    position: static;
+    border-radius: 10px;
+    max-width: 440px;
+    @include mq(tablet_big) {
+      max-width: 840px;
+    }
+    & > div + div {
+      position: absolute;
+      bottom: 25px !important;
+    }
+    & > div > div {
+      height: initial;
+      box-sizing: border-box;
+    }
+  }
+}
