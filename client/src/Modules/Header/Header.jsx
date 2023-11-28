@@ -5,7 +5,7 @@ import { Icon } from "../../shared/components/Icon";
 
 export const Header = () => {
   return (
-    <header className={s.header}>
+    <header className={s.header} id="header">
       <Link className={s.headerLogoLink} href="/">
         <Icon className={s.headerLogoLinkIcon} iconId="headerLogo"/>
       </Link>

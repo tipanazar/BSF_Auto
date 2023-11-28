@@ -1,6 +1,5 @@
 .wrapper {
   background-image: url("../../images/firstBackground.jpg");
-  //   background-position: 60% 45%;
   background-position-x: 60%;
   background-position-y: 45%;
   color: var(--font_white);
@@ -10,9 +9,9 @@
   .headersWrapper {
     max-width: fit-content;
     margin: 0 auto;
-    margin-bottom: 22px;
+    margin-bottom: 15px;
     .mainTitle {
-      font-size: 64px;
+      font-size: 63px;
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 0.9;
@@ -27,9 +26,9 @@
 
   .description {
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.03em;
     max-width: 570px;
@@ -38,12 +37,12 @@
   .linkToForm {
     display: block;
     width: fit-content;
-    padding: 10px 35px;
+    padding: 15px 35px;
     border-radius: 5px;
     margin: 0 auto;
     margin-bottom: 15px;
     background-color: var(--buttons_background);
-    // color: #fff;
+    color: #fff;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -52,9 +51,11 @@
   .thirdTitle {
     text-align: center;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     max-width: 80vw;
     letter-spacing: 1px;
+    // margin-bottom: 50px;
+
   }
 }

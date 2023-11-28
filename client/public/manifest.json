@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "lang": "uk",
+  "dir": "ltr",
+  "short_name": "BSF Auto",
+  "name": "BidShipFixAuto",
+  "description": "Cервіс з покупки, доставки та ремонту автомобілів з США в Польщу та Україну.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +11,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
+      "src": "logo192.jpg",
+      "type": "image/jpg",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
+      "src": "logo512.jpg",
+      "type": "image/jpg",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#1e212c",
   "background_color": "#ffffff"
 }

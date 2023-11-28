@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: var(--header_footer_color);
+
+  .linksWrapper {
+    display: flex;
+    margin-right: auto;
+
+    .socialLink {
+      padding: 5px;
+      margin-right: 10px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      .socialIcon {
+        width: 30px;
+        height: 30px;
+        fill: white;
+        opacity: 0.8;
+      }
+    }
+  }
+  .scrollUpButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: min-content;
+    border-radius: 10px;
+    fill: white;
+    background-color: #7cc05b;
+
+    .scrollUpIcon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
