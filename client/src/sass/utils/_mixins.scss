@@ -29,8 +29,8 @@
     @media (min-width: $desktop) {
       @content;
     }
-  } @else if $range == desktop-big {
-    @media (min-width: $desktop-big) {
+  } @else if $range == desktop_big {
+    @media (min-width: $desktop_big) {
       @content;
     }
   }

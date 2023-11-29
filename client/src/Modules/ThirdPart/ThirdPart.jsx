@@ -7,6 +7,7 @@ import "react-range-slider-input/dist/style.css";
 
 import s from "./thirdPart.module.scss";
 import { SelectField } from "../../shared/components/SelectField/SelectField";
+import { useSelector } from "react-redux";
 
 const priceRangeMin = 5000;
 const priceRangeMax = 20000;
@@ -21,6 +22,7 @@ const dateOptions = Array.from(
 export const ThirdPart = () => {
   const [priceRange, setPriceRange] = useState([7500, 10000]);
   const [yearRange, setYearRange] = useState({ min: null, max: null });
+  const { carMakes, isLoading } = useSelector(({ cars }) => cars);
 
   const handleYearRangeChange = (value) => {
     if (value.min && value.max && value.min > value.max) {
@@ -32,56 +34,85 @@ export const ThirdPart = () => {
 
   return (
     <div className={s.wrapper}>
-      <form className={s.form}>
+      <form className={s.form} onSubmit={(ev) => {
+        ev.preventDefault();
+        for (let el of ev.target.elements) {
+          if(el.name === "") continue;
+          console.log(`${el.name}: ${el.value}`);
+        }
+      }}>
         <p className={s.formTitle}>НАДІСЛАТИ ЗАПИТ</p>
         <label className={s.formLabel} htmlFor="name">
-          Ваше ім'я
+          Ваше ім'я*
         </label>
         <input
           className={s.formInput}
           placeholder="Тарас"
           type="text"
           id="name"
+          name="Ім'я"
+          required={true}
         />
         <label className={s.formLabel} htmlFor="phone">
-          Ваш телефон
+          Ваш телефон*
         </label>
         <input
           className={s.formInput}
           placeholder="+380995555555"
           type="tel"
           id="phone"
+          name="Телефон"
+          pattern={"/^\+\d{10,13}$/s".source}
+          required={true}
         />
-        <label className={s.formLabel} htmlFor="made">
-          Марка
-        </label>
-        <input
-          className={s.formInput}
-          placeholder="Toyota"
-          type="text"
-          id="made"
-        />
-        <label className={s.formLabel} htmlFor="model">
-          Модель
-        </label>
-        <input
-          className={s.formInput}
-          placeholder="Camry"
-          type="text"
-          id="model"
-        />
-        <div className={s.yearWrapper}>
-          <div className={s.yearInputWrapper}>
+        <div className={s.selectFieldsWrappers}>
+          <div className={s.selectFieldWrappers}>
             <SelectField
               labelClassName={s.formLabel}
-              inputClassName={`${s.formInput} ${s.yearInput}`}
-              inputWrapperClassName={s.yearInputWrapper}
-              labelText="Рік від"
-              // name="yearFrom"
+              inputClassName={`${s.formInput} ${s.selectField}`}
+              inputWrapperClassName={s.selectFieldWrappers}
+              labelText="Марка*"
+              placeholder="Toyota"
+              htmlFor="make"
+              type="text"
+              name="Марка"
+              required={true}
+              options={
+                carMakes
+                  ? carMakes
+                  : isLoading
+                  ? ["Завантаження..."]
+                  : ["Спробуйте перезавантажити сторінку"]
+              }
+            />
+          </div>
+          <div className={s.selectFieldWrappers}>
+            <label className={s.formLabel} htmlFor="model">
+              Модель*
+            </label>
+            <input
+              className={s.formInput}
+              style={{ margin: 0, textAlign: "center" }}
+              placeholder="Camry"
+              type="text"
+              id="model"
+              name="Модель"
+              required={true}
+            />
+          </div>
+        </div>
+        <div className={s.selectFieldsWrappers}>
+          <div className={s.selectFieldWrappers}>
+            <SelectField
+              labelClassName={s.formLabel}
+              inputClassName={`${s.formInput} ${s.selectField}`}
+              inputWrapperClassName={s.selectFieldWrappers}
+              labelText="Рік від*"
               placeholder="2007"
               htmlFor="yearFrom"
               type="number"
-              value={yearRange.min || ""}
+              name="Рік від"
+              required={true}
               setValue={(value) =>
                 handleYearRangeChange({ min: value, max: yearRange.max })
               }
@@ -89,17 +120,17 @@ export const ThirdPart = () => {
               options={dateOptions}
             />
           </div>
-          <div className={s.yearInputWrapper}>
+          <div className={s.selectFieldWrappers}>
             <SelectField
               labelClassName={s.formLabel}
-              inputClassName={`${s.formInput} ${s.yearInput}`}
-              inputWrapperClassName={s.yearInputWrapper}
-              labelText="Рік до"
-              // name="yearTo"
+              inputClassName={`${s.formInput} ${s.selectField}`}
+              inputWrapperClassName={s.selectFieldWrappers}
+              labelText="Рік до*"
               placeholder="2012"
               htmlFor="yearTo"
               type="number"
-              value={yearRange.max || ""}
+              name="Рік до"
+              required={true}
               setValue={(value) =>
                 handleYearRangeChange({ min: yearRange.min, max: value })
               }
@@ -111,24 +142,26 @@ export const ThirdPart = () => {
         <div className={s.priceRangeWrapper}>
           <div className={s.priceRangeInputsWrapper}>
             <div className={s.priceRangeInputBlock}>
-              <label className={s.formLabel}>Ціна від $</label>
+              <label className={s.formLabel}>Ціна від $*</label>
               <input
                 className={`${s.formInput} ${s.formPriceRangeInput}`}
                 type="text"
                 min={priceRangeMin}
                 max={priceRangeMax}
                 readOnly={true}
+                name="Ціна від"
                 value={`${priceRange[0]}$`}
               />
             </div>
             <div className={s.priceRangeInputBlock}>
-              <label className={s.formLabel}>Ціна до $</label>
+              <label className={s.formLabel}>Ціна до $*</label>
               <input
                 className={`${s.formInput} ${s.formPriceRangeInput}`}
                 type="text"
                 min={priceRangeMin}
                 max={priceRangeMax}
                 readOnly={true}
+                name="Ціна до"
                 value={`${priceRange[1]}$`}
               />
             </div>
@@ -141,15 +174,24 @@ export const ThirdPart = () => {
             onInput={(value) => setPriceRange(value)}
           />
         </div>
-        <label className={s.formLabel} htmlFor="country">
-          Країна доставки
-        </label>
-        <input
-          className={s.formInput}
-          placeholder="Зробити дропдаун"
-          type="text"
-          id="country"
-        />
+        <div
+          className={s.selectFieldsWrappers}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <SelectField
+            labelClassName={s.formLabel}
+            inputClassName={`${s.formInput} ${s.selectField}`}
+            inputWrapperClassName={s.selectFieldWrappers}
+            labelText="Країна доставки*"
+            placeholder="Країна доставки"
+            htmlFor="country"
+            type="text"
+            name="Країна доставки"
+            required={true}
+            readOnly={true}
+            options={["Україна", "Польща"]}
+          />
+        </div>
         <label className={s.formLabel} htmlFor="city">
           Місто доставки
         </label>
@@ -158,6 +200,17 @@ export const ThirdPart = () => {
           placeholder="Варшава/Київ"
           type="text"
           id="city"
+          name="Місто доставки"
+        />
+        <label className={s.formLabel} htmlFor="city">
+          Коментар
+        </label>
+        <input
+          className={s.formInput}
+          placeholder="Я хочу щоб була аудіосистема Bose та..."
+          type="text"
+          id="city"
+          name="Коментар"
         />
         <button className={s.formSubmitBtn} type="submit">
           Надіслати запит

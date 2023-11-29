@@ -1,7 +1,13 @@
+@import "../../sass/main.scss";
+
 .wrapper {
   padding: 10vw 30px;
   background-image: url("../../images/secondBackground.jpg");
   background-size: cover;
+  @include mq(tablet_big) {
+    padding: 60px 0 ;
+  }
+
   .form {
     display: flex;
     flex-direction: column;
@@ -10,6 +16,10 @@
     max-width: 540px;
     margin: auto;
     background-color: rgba(150, 151, 159, 0.6);
+    @include mq(tablet_big) {
+      padding: 30px 40px;
+    }
+
     .formTitle {
       color: #fff;
       text-align: center;
@@ -25,30 +35,34 @@
       font-weight: 400;
       margin-bottom: 5px;
     }
+
     .formInput {
       border-radius: 3px;
       border: 0.3px solid gray;
-    //   background: #ededed;
       background: white;
       font-weight: 500;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       margin-bottom: 15px;
       padding: 10px;
+      width: 100%;
       &:last-of-type {
         margin-bottom: 30px;
       }
     }
 
-    .yearWrapper {
+    .selectFieldsWrappers {
       display: flex;
       margin-bottom: 15px;
-      .yearInputWrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        &:first-of-type {
-          margin-right: 10px;
-        }
+    }
+    .selectFieldWrappers {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      &:first-of-type {
+        margin-right: 10px;
+      }
+      & > input {
+        margin-bottom: 0 !important;
       }
     }
 
@@ -62,7 +76,6 @@
         .priceRangeInputBlock {
           display: flex;
           flex-direction: column;
-          //   text-align: center;
           width: 100%;
           &:first-of-type {
             margin-right: 10px;
@@ -90,7 +103,7 @@
   }
 }
 
-.yearInput {
+.selectField {
   cursor: pointer;
   // z-index: 4;
   padding: 2px;

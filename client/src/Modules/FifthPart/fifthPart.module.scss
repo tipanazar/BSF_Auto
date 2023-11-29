@@ -1,9 +1,22 @@
+@import "../../sass/main.scss";
+
 .wrapper {
-  background-image: url("../../images/thirdBackground.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 40px 25px;
-  background-position: center;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../images/thirdBackground.jpg");
+  
+  @include mq(desktop_big) {
+    background-position-y: -40vw;
+  }
 
   .listItem {
+    max-width: 650px;
     margin-bottom: 20px;
     height: fit-content;
     cursor: pointer;
@@ -18,6 +31,9 @@
       border-radius: 9px 9px 0px 0px;
       background: rgba(81, 92, 104, 0.7);
       transition: all 0.1s linear;
+      @include mq(tablet) {
+        padding: 13px;
+      }
 
       .icon {
         width: 30px;
@@ -45,10 +61,13 @@
       font-weight: 400;
       line-height: 1.2;
       border-radius: 0px 0px 9px 9px;
-      background: rgba(247, 246, 246, 0.7);
+      background: rgba(255, 255, 255, 0.8);
       overflow: hidden;
       opacity: 1;
       transition: opacity 0.2s linear;
+      @include mq(tablet) {
+        padding: 15px 20px;
+      }
 
       & > ul {
         margin-top: 5px;

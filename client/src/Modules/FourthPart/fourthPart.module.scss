@@ -21,6 +21,9 @@
     @include mq(tablet_big) {
       max-width: 840px;
     }
+    @include mq(desktop) {
+      max-width: 1240px;
+    }
     & > div + div {
       position: absolute;
       bottom: 25px !important;
