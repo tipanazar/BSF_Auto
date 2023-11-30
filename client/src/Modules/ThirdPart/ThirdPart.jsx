@@ -35,6 +35,7 @@ export const ThirdPart = () => {
     <div className={s.wrapper}>
       <form
         className={s.form}
+        id="thirdPartForm"
         onSubmit={(ev) => {
           ev.preventDefault();
           for (let el of ev.target.elements) {

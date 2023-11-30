@@ -3,6 +3,9 @@
 .wrapper {
   background-color: var(--background_gray);
   padding: 20px 25px;
+  @include mq(desktop) {
+    padding: 30px 80px;
+  }
 
   .firstTitle {
     font-size: 27px;
@@ -10,6 +13,9 @@
     letter-spacing: 1px;
     margin-bottom: 30px;
     text-align: center;
+    @include mq(desktop) {
+      font-size: 35px;
+    }
   }
   .cardsList {
     display: grid;
@@ -21,9 +27,10 @@
     @include mq(tablet) {
       grid-template-columns: 1fr 1fr;
     }
-    // .cardsListItem {
-    //   // width: fit-content;
-    // }
+    @include mq(desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 50px;
+    }
   }
   .secondTitle {
     margin-bottom: 15px;
@@ -31,6 +38,9 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
+    @include mq(desktop) {
+      font-size: 35px;
+    }
   }
 }
 
@@ -45,11 +55,14 @@
     @include mq(tablet) {
       max-width: 900px;
     }
+    @include mq(desktop) {
+      max-width: 1540px;
+    }
     & > div + div {
       position: absolute;
       bottom: -25px !important;
     }
-    & > div > div  {
+    & > div > div {
       height: initial;
       box-sizing: border-box;
     }
@@ -57,6 +70,5 @@
 }
 
 .swiperSlide {
-  // display: none;
   height: 100%;
 }

@@ -23,7 +23,7 @@ export const SecondPart = () => {
         <li className={s.cardsListItem}>
           <CardElement
             title="2й крок"
-            svg={"buySteps_2"}
+            svg={"message"}
             description="Прозорий розрахунок кожного етапу до отримання готового автомобіля"
           />
         </li>
@@ -69,6 +69,9 @@ export const SecondPart = () => {
           breakpoints={{
             700: {
               slidesPerView: 2,
+            },
+            1100: {
+              slidesPerView: 3,
             },
           }}
           pagination={{

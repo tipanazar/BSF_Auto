@@ -5,7 +5,6 @@
   background-color: white;
 
   .carImage {
-    // max-height: 270px;
     height: 270px;
     width: 100%;
     object-fit: cover;
@@ -15,7 +14,6 @@
   .secondWrapper {
     padding: 15px;
     .carName {
-      // text-align: center;
       margin-bottom: 15px;
       color: #000;
       font-size: 20px;
@@ -27,24 +25,16 @@
       grid-template-columns: 1fr 1fr;
       row-gap: 7px;
       margin-bottom: 15px;
-      //   justify-content: space-between;
-      //   column-gap: 7vw;
-      // column-gap: ;
-      //   width: fit-content;
 
       .parametersListItem {
         display: flex;
         align-items: center;
-        // &:nth-child(2n + 1) {
-        //   margin-right: auto;
-        //   background-color: red;
-        // }
 
         .parametersListItemIcon {
           width: 20px;
           height: 20px;
           margin-right: 10px;
-          stroke: red;
+          stroke: black;
           fill: white;
         }
 
@@ -61,12 +51,6 @@
       grid-template-columns: 1fr 7fr;
       row-gap: 3px;
       column-gap: 7px;
-      //   width: min-content;
-      .priceListItem {
-        // display: flex; flex-wrap: nowrap;
-        // width: max-content;
-        // width: min-content;
-      }
     }
   }
 }

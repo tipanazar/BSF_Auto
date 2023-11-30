@@ -9,7 +9,7 @@ export const CarExampleCard = ({
   drive,
   mileage,
   gearbox,
-  type,
+  engineDisplacement,
   finalBid,
   inUkraine,
   inPoland,
@@ -38,7 +38,7 @@ export const CarExampleCard = ({
           </li>
           <li className={s.parametersListItem}>
             <Icon className={s.parametersListItemIcon} iconId="carCard_5" />
-            <p className={s.parametersListItemText}>{type}</p>
+            <p className={s.parametersListItemText}>{engineDisplacement}</p>
           </li>
           <li className={s.parametersListItem}>
             <Icon className={s.parametersListItemIcon} iconId="carCard_6" />

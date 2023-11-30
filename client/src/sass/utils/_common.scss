@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -9,7 +10,6 @@ html {
 }
 
 body {
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
@@ -22,22 +22,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
-}
-
-div#root {
-  // display: flex;
-  // flex-direction: column;
-  // min-height: inherit;
-  // background: var(--mainBackgroundGradientMobile);
-  // @include mq(tablet) {
-  //   background: var(--mainBackgroundGradientTablet);
-  // }
-  // @include mq(desktop) {
-  //   background: var(--mainBackgroundGradientDesktop);
-  // }
 }
 
 img {

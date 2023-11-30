@@ -1,3 +1,5 @@
+@import "../../../sass/main.scss";
+
 .wrapper {
   background-color: white;
   padding: 15px 10px;
@@ -5,6 +7,9 @@
   border-radius: 10px;
   text-align: center;
   height: 100%;
+  @include mq(desktop) {
+    max-width: 500px;
+  }
 
   &:not(:has(svg)) {
     display: flex;

@@ -17,7 +17,7 @@ export const FourthPart = () => {
         drive={item.parameters.drive}
         mileage={item.parameters.mileage}
         gearbox={item.parameters.gearbox}
-        type={item.parameters.type}
+        engineDisplacement={item.parameters.engineDisplacement}
         finalBid={item.price.finalBid}
         inUkraine={item.price.inUkraine}
         inPoland={item.price.inPoland}

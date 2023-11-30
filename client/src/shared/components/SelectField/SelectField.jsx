@@ -45,14 +45,6 @@ export const SelectField = ({
       );
     });
 
-  // const processValue = (value) => {
-  //   const tmp = options.map((item) => item.toLowerCase());
-  //   if (tmp.includes(value.toLowerCase())) {
-  //     setValue(value[0].toUpperCase() + value.slice(1));
-  //     console.log("Set value to", value[0].toUpperCase() + value.slice(1));
-  //   }
-  // };
-
   return (
     <>
       <label className={labelClassName} htmlFor={htmlFor}>
@@ -60,7 +52,6 @@ export const SelectField = ({
       </label>
       <div className={`${inputWrapperClassName} ${s.inputWrapper}`}>
         <input
-          // style={{ margin: 0 }}
           className={inputClassName}
           placeholder={placeholder}
           name={name}
@@ -72,7 +63,6 @@ export const SelectField = ({
           ref={inputRef}
           onChange={(ev) => {
             setInputValue(ev.target.value);
-            // processValue(ev.target.value);
           }}
         />
         <Icon className={s.icon} iconId="dropdownIndicator" />

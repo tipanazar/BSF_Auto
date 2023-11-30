@@ -1,8 +1,16 @@
+@import "../../sass/main.scss";
+
 .wrapper {
   display: flex;
   align-items: center;
   padding: 20px 30px;
   background-color: var(--header_footer_color);
+  @include mq(tablet) {
+    padding: 20px 50px;
+  }
+  @include mq(desktop) {
+    padding: 30px 80px;
+  }
 
   .linksWrapper {
     display: flex;
@@ -11,6 +19,9 @@
     .socialLink {
       padding: 5px;
       margin-right: 10px;
+      @include mq(desktop) {
+        margin-right: 15px;
+      }
       &:last-of-type {
         margin-right: 0;
       }
@@ -20,6 +31,14 @@
         height: 30px;
         fill: white;
         opacity: 0.8;
+        transition: fill 0.1s linear;
+        @include mq(desktop) {
+          width: 35px;
+          height: 35px;
+        }
+        &:hover {
+          fill: var(--hover_color);
+        }
       }
     }
   }
@@ -31,10 +50,18 @@
     border-radius: 10px;
     fill: white;
     background-color: #7cc05b;
+    transition: background-color 0.1s linear;
+    &:hover {
+      background-color: var(--hover_color);
+    }
 
     .scrollUpIcon {
       width: 30px;
       height: 30px;
+      @include mq(desktop) {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
 }

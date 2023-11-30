@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../../images/thirdBackground.jpg");
-  
+
   @include mq(desktop_big) {
     background-position-y: -40vw;
   }
@@ -33,6 +33,9 @@
       transition: all 0.1s linear;
       @include mq(tablet) {
         padding: 13px;
+      }
+      &:hover {
+        background-color: #424b54b3;
       }
 
       .icon {

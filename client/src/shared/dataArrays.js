@@ -1,3 +1,10 @@
+import hyundaiTucson from "../images/hyundaiTucson.jpg"
+import jeepCherokee from "../images/jeepCherokeeLatitude.jpg"
+import mazdaCx5 from "../images/mazdaCx5.jpg"
+import fiat500x from "../images/fiat500x.jpg"
+import audiQ5 from "../images/audiQ5.jpg"
+import hyundaiKona from "../images/hyundaiKona.jpg"
+
 export const faqData = [
     {
       title: "У США продається один мотлох, навіщо там купувати машину?",
@@ -108,54 +115,105 @@ export const carMakes = [
 
 export const carsExamplesData = [
     {
-      img: "https://cdn.riastatic.com/photosnew/auto/photo/Hyundai_Tucson__523144308f.jpg",
+      img: hyundaiTucson,
       carName: "Hyundai Tucson Sel",
       parameters: {
         fuelType: "Бензин",
         year: "2018",
         drive: "Передній",
-        mileage: "40285mi",
+        mileage: "40034mi",
         gearbox: "Автомат",
-        type: "SUV",
+        engineDisplacement: "2.0L",
       },
       price: {
-        finalBid: "6900$",
-        inUkraine: "18130$",
-        inPoland: "16500$",
+        finalBid: "$6900",
+        inUkraine: "$18130",
+        inPoland: "$16500",
       },
     },
     {
-      img: "https://cdn2.riastatic.com/photosnew/auto/photo/audi_q5__410391477f.jpg",
-      carName: "Audi Q5",
+      img: jeepCherokee,
+      carName: "Jeep Cherokee Latitude",
       parameters: {
         fuelType: "Бензин",
-        year: "2016",
+        year: "2019",
         drive: "Передній",
-        mileage: "63285mi",
+        mileage: "21940mi (Actual)",
         gearbox: "Автомат",
-        type: "SUV",
+        engineDisplacement: "2.4L",
       },
       price: {
-        finalBid: "6900$",
-        inUkraine: "18130$",
-        inPoland: "16500$",
+        finalBid: "$5300",
+        inUkraine: "$16500",
+        inPoland: "$15000",
       },
     },
     {
-      img: "https://www.robin-noorda.com/uploads/1/6/8/3/16830688/3347022_orig.jpg",
-      carName: "Example",
+      img: mazdaCx5,
+      carName: "Mazda Cx-5 Select",
       parameters: {
         fuelType: "Бензин",
-        year: "2016",
+        year: "2022",
         drive: "Передній",
-        mileage: "63285mi",
+        mileage: "5493mi",
         gearbox: "Автомат",
-        type: "SUV",
+        engineDisplacement: "2.5L",
       },
       price: {
-        finalBid: "6900$",
-        inUkraine: "18130$",
-        inPoland: "16500$",
+        finalBid: "$7800",
+        inUkraine: "$21500",
+        inPoland: "$20300",
+      },
+    },
+    {
+      img: fiat500x,
+      carName: "Fiat 500X Trekking",
+      parameters: {
+        fuelType: "Бензин",
+        year: "2018",
+        drive: "Передній",
+        mileage: "55640mi",
+        gearbox: "Автомат",
+        engineDisplacement: "2.4L",
+      },
+      price: {
+        finalBid: "$2700",
+        inUkraine: "$12650",
+        inPoland: "$11000",
+      },
+    },
+    {
+      img: audiQ5,
+      carName: "Audi Q5 Premium",
+      parameters: {
+        fuelType: "Бензин",
+        year: "2021",
+        drive: "Повний",
+        mileage: "11119mi",
+        gearbox: "Автомат",
+        engineDisplacement: "2.0L",
+      },
+      price: {
+        finalBid: "$15475",
+        inUkraine: "$33500",
+        inPoland: "$31100",
+      },
+    },
+    {
+      img: hyundaiKona,
+      carName: "Hyundai Kona Limited",
+      parameters: {
+        fuelType: "Бензин",
+        year: "2020",
+        drive: "Повний",
+        mileage: "39457mi",
+        gearbox: "Автомат",
+        engineDisplacement: "1.6L",
+      },
+      price: {
+        finalBid: "$2800",
+        inUkraine: "$13500",
+        inPoland: "$12800",
       },
     },
   ];
