@@ -114,6 +114,23 @@ export const carMakes = [
   ];
 
 export const carsExamplesData = [
+  {
+    img: mazdaCx5,
+    carName: "Mazda Cx-5 Select",
+    parameters: {
+      fuelType: "Бензин",
+      year: "2022",
+      drive: "Передній",
+      mileage: "5493mi",
+      gearbox: "Автомат",
+      engineDisplacement: "2.5L",
+    },
+    price: {
+      finalBid: "$7800",
+      inUkraine: "$21500",
+      inPoland: "$20300",
+    },
+  },
     {
       img: hyundaiTucson,
       carName: "Hyundai Tucson Sel",
@@ -146,23 +163,6 @@ export const carsExamplesData = [
         finalBid: "$5300",
         inUkraine: "$16500",
         inPoland: "$15000",
-      },
-    },
-    {
-      img: mazdaCx5,
-      carName: "Mazda Cx-5 Select",
-      parameters: {
-        fuelType: "Бензин",
-        year: "2022",
-        drive: "Передній",
-        mileage: "5493mi",
-        gearbox: "Автомат",
-        engineDisplacement: "2.5L",
-      },
-      price: {
-        finalBid: "$7800",
-        inUkraine: "$21500",
-        inPoland: "$20300",
       },
     },
     {

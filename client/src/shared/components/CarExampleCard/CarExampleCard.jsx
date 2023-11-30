@@ -16,7 +16,13 @@ export const CarExampleCard = ({
 }) => {
   return (
     <div className={s.wrapper}>
-      <img src={img} alt="Фото авто" className={s.carImage} width={300} />
+      <img
+        src={img}
+        alt="Фото авто"
+        className={s.carImage}
+        width={300}
+        loading="lazy"
+      />
       <div className={s.secondWrapper}>
         <p className={s.carName}>{carName}</p>
         <ul className={s.parametersList}>

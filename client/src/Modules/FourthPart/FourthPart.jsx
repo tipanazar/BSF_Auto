@@ -31,10 +31,6 @@ export const FourthPart = () => {
         className={s.swiper}
         spaceBetween={20}
         centeredSlides={false}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
         breakpoints={{
           890: {
             slidesPerView: 2,
