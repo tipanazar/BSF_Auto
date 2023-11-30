@@ -74,18 +74,17 @@ export const ThirdPart = () => {
               labelClassName={s.formLabel}
               inputClassName={`${s.formInput} ${s.selectField}`}
               inputWrapperClassName={s.selectFieldWrappers}
-              labelText="Марка*"
+              labelText="Марка"
               placeholder="Toyota"
               htmlFor="make"
               type="text"
               name="Марка"
-              required={true}
               options={carMakes}
             />
           </div>
           <div className={s.selectFieldWrappers}>
             <label className={s.formLabel} htmlFor="model">
-              Модель*
+              Модель
             </label>
             <input
               className={s.formInput}
@@ -94,7 +93,6 @@ export const ThirdPart = () => {
               type="text"
               id="model"
               name="Модель"
-              required={true}
             />
           </div>
         </div>
@@ -104,12 +102,11 @@ export const ThirdPart = () => {
               labelClassName={s.formLabel}
               inputClassName={`${s.formInput} ${s.selectField}`}
               inputWrapperClassName={s.selectFieldWrappers}
-              labelText="Рік від*"
+              labelText="Рік від"
               placeholder="2007"
               htmlFor="yearFrom"
               type="number"
               name="Рік від"
-              required={true}
               setValue={(value) =>
                 handleYearRangeChange({ min: value, max: yearRange.max })
               }
@@ -122,12 +119,11 @@ export const ThirdPart = () => {
               labelClassName={s.formLabel}
               inputClassName={`${s.formInput} ${s.selectField}`}
               inputWrapperClassName={s.selectFieldWrappers}
-              labelText="Рік до*"
+              labelText="Рік до"
               placeholder="2012"
               htmlFor="yearTo"
               type="number"
               name="Рік до"
-              required={true}
               setValue={(value) =>
                 handleYearRangeChange({ min: yearRange.min, max: value })
               }
@@ -139,7 +135,7 @@ export const ThirdPart = () => {
         <div className={s.priceRangeWrapper}>
           <div className={s.priceRangeInputsWrapper}>
             <div className={s.priceRangeInputBlock}>
-              <label className={s.formLabel}>Ціна від $*</label>
+              <label className={s.formLabel}>Ціна від $</label>
               <input
                 className={`${s.formInput} ${s.formPriceRangeInput}`}
                 type="text"
@@ -151,7 +147,7 @@ export const ThirdPart = () => {
               />
             </div>
             <div className={s.priceRangeInputBlock}>
-              <label className={s.formLabel}>Ціна до $*</label>
+              <label className={s.formLabel}>Ціна до $</label>
               <input
                 className={`${s.formInput} ${s.formPriceRangeInput}`}
                 type="text"
@@ -179,12 +175,11 @@ export const ThirdPart = () => {
             labelClassName={s.formLabel}
             inputClassName={`${s.formInput} ${s.selectField}`}
             inputWrapperClassName={s.selectFieldWrappers}
-            labelText="Країна доставки*"
+            labelText="Країна доставки"
             placeholder="Країна доставки"
             htmlFor="country"
             type="text"
             name="Країна доставки"
-            required={true}
             readOnly={true}
             options={["Україна", "Польща"]}
           />
@@ -199,18 +194,18 @@ export const ThirdPart = () => {
           id="city"
           name="Місто доставки"
         />
-        <label className={s.formLabel} htmlFor="city">
+        <label className={s.formLabel} htmlFor="comment">
           Коментар
         </label>
         <input
           className={s.formInput}
           placeholder="Я хочу щоб була аудіосистема Bose та..."
           type="text"
-          id="city"
+          id="comment"
           name="Коментар"
         />
         <button className={s.formSubmitBtn} type="submit">
-          Надіслати запит
+          НАДІСЛАТИ ЗАПИТ
         </button>
       </form>
     </div>

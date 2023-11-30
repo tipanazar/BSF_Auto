@@ -3,6 +3,7 @@ import s from "./carExampleCard.module.scss";
 
 export const CarExampleCard = ({
   img,
+  linkOnCar,
   carName,
   fuelType,
   year,
@@ -15,7 +16,7 @@ export const CarExampleCard = ({
   inPoland,
 }) => {
   return (
-    <div className={s.wrapper}>
+    <a className={s.wrapper} href={linkOnCar} target="_blank">
       <img
         src={img}
         alt="Фото авто"
@@ -70,6 +71,6 @@ export const CarExampleCard = ({
           </li>
         </ul>
       </div>
-    </div>
+    </a>
   );
 };

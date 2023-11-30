@@ -13,8 +13,8 @@
     letter-spacing: 1px;
     margin-bottom: 30px;
     text-align: center;
-    @include mq(desktop) {
-      font-size: 35px;
+    @include mq(tablet) {
+      font-size: 30px;
     }
   }
   .cardsList {
@@ -35,11 +35,11 @@
   .secondTitle {
     margin-bottom: 15px;
     text-align: center;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 700;
     letter-spacing: 1px;
-    @include mq(desktop) {
-      font-size: 35px;
+    @include mq(tablet) {
+      font-size: 30px;
     }
   }
 }

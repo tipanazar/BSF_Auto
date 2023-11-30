@@ -21,12 +21,13 @@ export const FourthPart = () => {
         finalBid={item.price.finalBid}
         inUkraine={item.price.inUkraine}
         inPoland={item.price.inPoland}
+        linkOnCar={item.linkOnCar}
       />
     </SwiperSlide>
   ));
   return (
     <div className={s.wrapper}>
-      <p className={s.title}>Приклади</p>
+      <p className={s.title}>Доставлені авто під ключ</p>
       <Swiper
         className={s.swiper}
         spaceBetween={20}

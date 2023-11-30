@@ -130,6 +130,7 @@ export const carsExamplesData = [
       inUkraine: "$21500",
       inPoland: "$20300",
     },
+    linkOnCar: "https://bidfax.info/mazda/cx-5/17999847-mazda-cx-5-select-2022-black-25l-4-vin-jm3kfbbm3n0606166.html"
   },
     {
       img: hyundaiTucson,
@@ -147,6 +148,7 @@ export const carsExamplesData = [
         inUkraine: "$18130",
         inPoland: "$16500",
       },
+      linkOnCar:"https://bidfax.info/hyundai/tucson/9089731-hyundai-tucson-sel-2018-blue-20l-4-vin-km8j3ca47ju736289.html"
     },
     {
       img: jeepCherokee,
@@ -164,6 +166,7 @@ export const carsExamplesData = [
         inUkraine: "$16500",
         inPoland: "$15000",
       },
+      linkOnCar: "https://bidfax.info/jeep/cherokee/18745741-jeep-cherokee-latitude-2019-black-24l-4-vin-1c4pjlcb5kd458090.html"
     },
     {
       img: fiat500x,
@@ -181,6 +184,7 @@ export const carsExamplesData = [
         inUkraine: "$12650",
         inPoland: "$11000",
       },
+      linkOnCar: "https://bidfax.info/fiat/500x/14791233-fiat-500x-trekking-2018-gray-24l-vin-zfbcfxcb8jp648411.html"
     },
     {
       img: audiQ5,
@@ -198,6 +202,7 @@ export const carsExamplesData = [
         inUkraine: "$33500",
         inPoland: "$31100",
       },
+      linkOnCar: "https://bidfax.info/audi/q5/18857554-audi-q5-premium-2021-black-20l-vin-wa1aaafy9m2055491.html"
     },
     {
       img: hyundaiKona,
@@ -215,5 +220,6 @@ export const carsExamplesData = [
         inUkraine: "$13500",
         inPoland: "$12800",
       },
+      linkOnCar: "https://bidfax.info/hyundai/kona/17367533-hyundai-kona-limited-2020-gray-16l-4-vin-km8k3ca53lu507530.html"
     },
   ];
