@@ -1,67 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CarExampleCard } from "../../shared/components/CarExampleCard/CarExampleCard";
-import s from "./fourthPart.module.scss";
 import { Autoplay, Pagination } from "swiper/modules";
 
-const data = [
-  {
-    img: "https://cdn.riastatic.com/photosnew/auto/photo/Hyundai_Tucson__523144308f.jpg",
-    carName: "Hyundai Tucson Sel",
-    parameters: {
-      fuelType: "Бензин",
-      year: "2018",
-      drive: "Передній",
-      mileage: "40285mi",
-      gearbox: "Автомат",
-      type: "SUV",
-      // engineDisplacement: "2.0",
-    },
-    price: {
-      finalBid: "6900$",
-      inUkraine: "18130$",
-      inPoland: "16500$",
-    },
-  },
-  {
-    img: "https://cdn2.riastatic.com/photosnew/auto/photo/audi_q5__410391477f.jpg",
-    carName: "Audi Q5",
-    parameters: {
-      fuelType: "Бензин",
-      year: "2016",
-      drive: "Передній",
-      mileage: "63285mi",
-      gearbox: "Автомат",
-      type: "SUV",
-      // engineDisplacement: "2.0",
-    },
-    price: {
-      finalBid: "6900$",
-      inUkraine: "18130$",
-      inPoland: "16500$",
-    },
-  },
-  {
-    img: "https://www.robin-noorda.com/uploads/1/6/8/3/16830688/3347022_orig.jpg",
-    carName: "Example",
-    parameters: {
-      fuelType: "Бензин",
-      year: "2016",
-      drive: "Передній",
-      mileage: "63285mi",
-      gearbox: "Автомат",
-      type: "SUV",
-      // engineDisplacement: "2.0",
-    },
-    price: {
-      finalBid: "6900$",
-      inUkraine: "18130$",
-      inPoland: "16500$",
-    },
-  },
-];
+import { CarExampleCard } from "../../shared/components/CarExampleCard/CarExampleCard";
+import { carsExamplesData } from "../../shared/dataArrays";
+
+import s from "./fourthPart.module.scss";
 
 export const FourthPart = () => {
-  const swiperMarkup = data.map((item, idx) => (
+  const swiperMarkup = carsExamplesData.map((item, idx) => (
     <SwiperSlide key={idx}>
       <CarExampleCard
         img={item.img}

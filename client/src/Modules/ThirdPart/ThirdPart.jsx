@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-// import Select from "react-select";
 
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 
-import s from "./thirdPart.module.scss";
 import { SelectField } from "../../shared/components/SelectField/SelectField";
-import { useSelector } from "react-redux";
+import { carMakes } from "../../shared/dataArrays";
+
+import s from "./thirdPart.module.scss";
 
 const priceRangeMin = 5000;
 const priceRangeMax = 20000;
@@ -22,7 +22,6 @@ const dateOptions = Array.from(
 export const ThirdPart = () => {
   const [priceRange, setPriceRange] = useState([7500, 10000]);
   const [yearRange, setYearRange] = useState({ min: null, max: null });
-  const { carMakes, isLoading } = useSelector(({ cars }) => cars);
 
   const handleYearRangeChange = (value) => {
     if (value.min && value.max && value.min > value.max) {
@@ -34,13 +33,16 @@ export const ThirdPart = () => {
 
   return (
     <div className={s.wrapper}>
-      <form className={s.form} onSubmit={(ev) => {
-        ev.preventDefault();
-        for (let el of ev.target.elements) {
-          if(el.name === "") continue;
-          console.log(`${el.name}: ${el.value}`);
-        }
-      }}>
+      <form
+        className={s.form}
+        onSubmit={(ev) => {
+          ev.preventDefault();
+          for (let el of ev.target.elements) {
+            if (el.name === "") continue;
+            console.log(`${el.name}: ${el.value}`);
+          }
+        }}
+      >
         <p className={s.formTitle}>НАДІСЛАТИ ЗАПИТ</p>
         <label className={s.formLabel} htmlFor="name">
           Ваше ім'я*
@@ -62,7 +64,7 @@ export const ThirdPart = () => {
           type="tel"
           id="phone"
           name="Телефон"
-          pattern={"/^\+\d{10,13}$/s".source}
+          pattern={"/^+d{10,13}$/s".source}
           required={true}
         />
         <div className={s.selectFieldsWrappers}>
@@ -77,13 +79,7 @@ export const ThirdPart = () => {
               type="text"
               name="Марка"
               required={true}
-              options={
-                carMakes
-                  ? carMakes
-                  : isLoading
-                  ? ["Завантаження..."]
-                  : ["Спробуйте перезавантажити сторінку"]
-              }
+              options={carMakes}
             />
           </div>
           <div className={s.selectFieldWrappers}>

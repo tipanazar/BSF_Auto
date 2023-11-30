@@ -1,10 +1,11 @@
-import { CardElement } from "../../shared/components/CardElement/CardElement";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
+import { CardElement } from "../../shared/components/CardElement/CardElement";
+
 import s from "./secondPart.module.scss";
 
 export const SecondPart = () => {

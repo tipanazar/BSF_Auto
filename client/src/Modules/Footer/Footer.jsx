@@ -2,8 +2,6 @@ import { Icon } from "../../shared/components/Icon";
 
 import s from "./footer.module.scss";
 
-// const document =
-
 export const Footer = () => {
   return (
     <footer className={s.wrapper}>
