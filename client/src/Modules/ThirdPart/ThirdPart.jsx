@@ -107,6 +107,7 @@ export const ThirdPart = () => {
               htmlFor="yearFrom"
               type="number"
               name="Рік від"
+              value={yearRange.min || ""}
               setValue={(value) =>
                 handleYearRangeChange({ min: value, max: yearRange.max })
               }
@@ -124,6 +125,7 @@ export const ThirdPart = () => {
               htmlFor="yearTo"
               type="number"
               name="Рік до"
+              value={yearRange.max || ""}
               setValue={(value) =>
                 handleYearRangeChange({ min: yearRange.min, max: value })
               }

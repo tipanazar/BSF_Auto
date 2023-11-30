@@ -36,7 +36,7 @@ export const SelectField = ({
           }}
           onMouseUp={() => {
             setValue && setValue(option);
-            inputRef.current.value = option;
+            if (!setValue) inputRef.current.value = option;
             inputRef.current.blur();
           }}
         >

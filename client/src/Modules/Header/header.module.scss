@@ -13,16 +13,20 @@ header {
   }
 
   .headerLogoLink {
+    margin-right: auto;
     .headerLogoLinkIcon {
-      width: 50px;
-      height: 40px;
+      height: 50px;
+      width: 60px;
       fill: white;
       @include mq(tablet) {
-        width: 55px;
-        height: 45px;
+        height: 50px;
+        width: 65px;
+      }
+      @include mq(desktop) {
+        height: 55px;
+        width: 70px;
       }
     }
-    margin-right: auto;
   }
 
   .headerLinksWrapper {
@@ -64,11 +68,11 @@ header {
 
         .headerLink {
           color: white;
-          text-decoration: underline;
+          font-style: italic;
+          transition: color 50ms linear;
           &:hover {
             color: var(--hover_color);
           }
-          transition: color 0.1s linear;
         }
       }
     }
