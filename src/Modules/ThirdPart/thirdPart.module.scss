@@ -88,22 +88,6 @@
         }
       }
     }
-
-    .formSubmitBtn {
-      border-radius: 2px;
-      background-color: #7cc05b;
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      border: 0;
-      padding: 10px;
-      transition: background-color 0.1s linear;
-      &:hover {
-        background-color: var(--hover_color);
-      }
-    }
   }
 
   .formSubmitionWindow {
@@ -122,19 +106,34 @@
       fill: white;
       width: 130px;
       height: 130px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
+
     .formSubmitionText {
       font-size: 20px;
       font-weight: 600;
       text-align: center;
+      margin-bottom: 15px;
       @include mq(mobile) {
         font-size: 24px;
       }
       @include mq(tablet) {
         font-size: 27px;
+        margin-bottom: 20px;
       }
     }
+
+    .formSubmitionBtn {
+      box-shadow: 0;
+      @include mq(mobile) {
+        padding: 13px 15px;
+        font-size: 16px;
+      }
+      @include mq(tablet) {
+        margin-bottom: 5px;
+      }
+    }
+
     .formSubmitionLink {
       transition: color 0.1s linear;
       font-size: 20px;
@@ -151,6 +150,21 @@
         margin-bottom: 0;
       }
     }
+  }
+}
+.formSubmitBtn {
+  border-radius: 2px;
+  background-color: #7cc05b;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 0;
+  padding: 10px;
+  transition: background-color 0.1s linear;
+  &:hover {
+    background-color: var(--hover_color);
   }
 }
 

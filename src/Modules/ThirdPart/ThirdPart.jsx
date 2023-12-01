@@ -22,6 +22,7 @@ const dateOptions = Array.from(
 );
 
 export const ThirdPart = () => {
+  const [formatedData, setFormatedData] = useState(null);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [priceRange, setPriceRange] = useState([17000, 23000]);
   const [yearRange, setYearRange] = useState({ min: null, max: null });
@@ -34,7 +35,7 @@ export const ThirdPart = () => {
     }
   };
 
-  const handleFormSubmit = (ev) => {
+  const formatFormData = (ev) => {
     ev.preventDefault();
     let formData = "Нова заявка:%0A%0A";
     for (let el of ev.target.elements) {
@@ -43,11 +44,18 @@ export const ThirdPart = () => {
         `${el.name}: ${el.value.length ? el.value : "-"}%0A`
       );
     }
+    console.log(formData);
+    handleFormSubmit(formData);
+  };
+
+  const handleFormSubmit = (formData) => {
+    if (!formData) return;
     sendDataApi(formData)
       .then((res) => {
         setIsFormSubmitted(true);
       })
       .catch((err) => {
+        formData && !formatedData && setFormatedData(formData);
         setIsFormSubmitted("error");
         console.log(err);
       });
@@ -63,6 +71,12 @@ export const ThirdPart = () => {
         <p className={s.formSubmitionText}>
           Помилка при відправці форми, спробуйте пізніше або зв'яжіться з нами.
         </p>
+        <button
+          className={`${s.formSubmitBtn} ${s.formSubmitionBtn}`}
+          onClick={() => handleFormSubmit(formatedData)}
+        >
+          СПРОБУВАТИ ЗНОВУ
+        </button>
         <a className={s.formSubmitionLink} href="tel:+380669811870">
           +38(066) 98 11 870
         </a>
@@ -91,7 +105,7 @@ export const ThirdPart = () => {
       <form
         className={s.form}
         id="thirdPartForm"
-        onSubmit={(ev) => handleFormSubmit(ev)}
+        onSubmit={(ev) => formatFormData(ev)}
       >
         <p className={s.formTitle}>НАДІСЛАТИ ЗАПИТ</p>
         <label className={s.formLabel} htmlFor="name">
