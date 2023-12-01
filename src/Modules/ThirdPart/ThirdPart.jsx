@@ -8,6 +8,7 @@ import { SelectField } from "../../shared/components/SelectField/SelectField";
 import { carMakes } from "../../shared/dataArrays";
 
 import s from "./thirdPart.module.scss";
+import { sendDataApi } from "../../shared/api";
 
 const priceRangeMin = 5000;
 const priceRangeMax = 20000;
@@ -31,19 +32,27 @@ export const ThirdPart = () => {
     }
   };
 
+  const handleFormSubmit = (ev) => {
+    ev.preventDefault();
+    let formData = "Нова заявка:%0A%0A";
+    for (let el of ev.target.elements) {
+      if (el.name === "") continue;
+      formData = formData.concat(
+        `${el.name}: ${el.value.length ? el.value : "-"}%0A`
+      );
+    }
+    sendDataApi(formData)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className={s.wrapper}>
-      <form
-        className={s.form}
-        id="thirdPartForm"
-        onSubmit={(ev) => {
-          ev.preventDefault();
-          for (let el of ev.target.elements) {
-            if (el.name === "") continue;
-            console.log(`${el.name}: ${el.value}`);
-          }
-        }}
-      >
+      <form className={s.form} id="thirdPartForm" onSubmit={handleFormSubmit}>
         <p className={s.formTitle}>НАДІСЛАТИ ЗАПИТ</p>
         <label className={s.formLabel} htmlFor="name">
           Ваше ім'я*
@@ -54,6 +63,7 @@ export const ThirdPart = () => {
           type="text"
           id="name"
           name="Ім'я"
+          minLength={2}
           required={true}
         />
         <label className={s.formLabel} htmlFor="phone">
@@ -65,7 +75,7 @@ export const ThirdPart = () => {
           type="tel"
           id="phone"
           name="Телефон"
-          pattern={"/^+d{10,13}$/s".source}
+          pattern={/^\+\d{11,13}$/s.source}
           required={true}
         />
         <div className={s.selectFieldsWrappers}>
