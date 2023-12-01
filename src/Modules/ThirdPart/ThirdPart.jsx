@@ -12,7 +12,7 @@ import { sendDataApi } from "../../shared/api";
 import { Icon } from "../../shared/components/Icon";
 
 const priceRangeMin = 5000;
-const priceRangeMax = 20000;
+const priceRangeMax = 50000;
 const minYear = 1950;
 const yearMax = new Date().getFullYear() + 1;
 
@@ -23,7 +23,7 @@ const dateOptions = Array.from(
 
 export const ThirdPart = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [priceRange, setPriceRange] = useState([7500, 10000]);
+  const [priceRange, setPriceRange] = useState([17000, 23000]);
   const [yearRange, setYearRange] = useState({ min: null, max: null });
 
   const handleYearRangeChange = (value) => {
@@ -125,7 +125,7 @@ export const ThirdPart = () => {
               inputClassName={`${s.formInput} ${s.selectField}`}
               inputWrapperClassName={s.selectFieldWrappers}
               labelText="Марка"
-              placeholder="Toyota"
+              placeholder="Mazda"
               htmlFor="make"
               type="text"
               name="Марка"
@@ -139,7 +139,7 @@ export const ThirdPart = () => {
             <input
               className={s.formInput}
               style={{ margin: 0, textAlign: "center" }}
-              placeholder="Camry"
+              placeholder="CX5"
               type="text"
               id="model"
               name="Модель"
@@ -153,7 +153,7 @@ export const ThirdPart = () => {
               inputClassName={`${s.formInput} ${s.selectField}`}
               inputWrapperClassName={s.selectFieldWrappers}
               labelText="Рік від"
-              placeholder="2007"
+              placeholder="2019"
               htmlFor="yearFrom"
               type="number"
               name="Рік від"
@@ -171,7 +171,7 @@ export const ThirdPart = () => {
               inputClassName={`${s.formInput} ${s.selectField}`}
               inputWrapperClassName={s.selectFieldWrappers}
               labelText="Рік до"
-              placeholder="2012"
+              placeholder="2023"
               htmlFor="yearTo"
               type="number"
               name="Рік до"
