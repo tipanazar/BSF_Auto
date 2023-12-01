@@ -9,6 +9,7 @@ import { carMakes } from "../../shared/dataArrays";
 
 import s from "./thirdPart.module.scss";
 import { sendDataApi } from "../../shared/api";
+import { Icon } from "../../shared/components/Icon";
 
 const priceRangeMin = 5000;
 const priceRangeMax = 20000;
@@ -21,6 +22,7 @@ const dateOptions = Array.from(
 );
 
 export const ThirdPart = () => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [priceRange, setPriceRange] = useState([7500, 10000]);
   const [yearRange, setYearRange] = useState({ min: null, max: null });
 
@@ -43,16 +45,54 @@ export const ThirdPart = () => {
     }
     sendDataApi(formData)
       .then((res) => {
-        console.log(res);
+        setIsFormSubmitted(true);
       })
       .catch((err) => {
+        setIsFormSubmitted("error");
         console.log(err);
       });
   };
 
-  return (
+  return isFormSubmitted === "error" ? (
     <div className={s.wrapper}>
-      <form className={s.form} id="thirdPartForm" onSubmit={handleFormSubmit}>
+      <div className={s.formSubmitionWindow}>
+        <Icon
+          className={s.formSubmitionIcon}
+          iconId="formSubmitionUnsucessful"
+        />
+        <p className={s.formSubmitionText}>
+          Помилка при відправці форми, спробуйте пізніше або зв'яжіться з нами.
+        </p>
+        <a className={s.formSubmitionLink} href="tel:+380669811870">
+          +38(066) 98 11 870
+        </a>
+        <a className={s.formSubmitionLink} href="tel:+48452550302">
+          +48 452 550 302
+        </a>
+        <a
+          className={s.formSubmitionLink}
+          href="mailto:bsfauto.pl.ua@gmail.com"
+        >
+          bsfauto.pl.ua@gmail.com
+        </a>
+      </div>
+    </div>
+  ) : isFormSubmitted ? (
+    <div className={s.wrapper}>
+      <div className={s.formSubmitionWindow}>
+        <Icon className={s.formSubmitionIcon} iconId="formSubmitionSucessful" />
+        <p className={s.formSubmitionText}>
+          Форму успішно надіслано, ми з вами зв'яжемось найближчим часом!
+        </p>
+      </div>
+    </div>
+  ) : (
+    <div className={s.wrapper}>
+      <form
+        className={s.form}
+        id="thirdPartForm"
+        onSubmit={(ev) => handleFormSubmit(ev)}
+      >
         <p className={s.formTitle}>НАДІСЛАТИ ЗАПИТ</p>
         <label className={s.formLabel} htmlFor="name">
           Ваше ім'я*
