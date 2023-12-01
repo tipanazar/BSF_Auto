@@ -40,11 +40,16 @@ export const ThirdPart = () => {
     let formData = "Нова заявка:%0A%0A";
     for (let el of ev.target.elements) {
       if (el.name === "") continue;
-      formData = formData.concat(
-        `${el.name}: ${el.value.length ? el.value : "-"}%0A`
-      );
+      if (el.name === "Телефон") {
+        formData = formData.concat(
+          `${el.name}: ${el.value.length ? `%2B${el.value.slice(1)}` : "-"}%0A`
+        );
+      } else {
+        formData = formData.concat(
+          `${el.name}: ${el.value.length ? el.value : "-"}%0A`
+        );
+      }
     }
-    console.log(formData);
     handleFormSubmit(formData);
   };
 
