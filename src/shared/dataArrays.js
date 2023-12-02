@@ -157,7 +157,7 @@ export const carsExamplesData = [
         fuelType: "Бензин",
         year: "2019",
         drive: "Передній",
-        mileage: "21940mi (Actual)",
+        mileage: "21940mi",
         gearbox: "Автомат",
         engineDisplacement: "2.4L",
       },
